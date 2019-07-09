@@ -17,11 +17,11 @@
     <link href="{% static 'material/assets/plugins/c3-master/c3.min.css' %}" rel="stylesheet">
     <link href="{% static 'material/html/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'material/html/css/colors/blue.css' %}" id="theme" rel="stylesheet">
-   
+
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-    
+
 
     <div id="main-wrapper">
 
@@ -60,10 +60,8 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{static 'material/assets/images/users/1.jpg' %}" alt="user"
-                                    class="profile-pic m-r-10" />{{user.username}}
-                                </a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.username}}
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -103,11 +101,11 @@
                     </div>
                 </nav>
             </div>
-       
+
             <div class="sidebar-footer">
                 <a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
                 <a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                <a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                <a href="{% url 'logout' %}" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
             </div>
         </aside>
 
@@ -129,7 +127,7 @@
                             Upgrade to Pro</a>
                     </div>
                 </div>
-        
+
                 <div class="row">
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
@@ -523,13 +521,13 @@
                         </div>
                     </div>
                 </div>
-           
+
             </div>
-         
+
             <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
-            
+
         </div>
-    
+
     </div>
 
     <script src="{% static 'material/assets/plugins/jquery/jquery.min.js' %}"></script>
@@ -541,7 +539,8 @@
     <script src="{% static 'material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js' %}"></script>
     <script src="{% static 'material/js/custom.min.js' %}"></script>
     <script src="{% static 'material/assets/plugins/chartist-js/dist/chartist.min.js' %}"></script>
-    <script src="{% static 'material/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js' %}"></script>
+    <script
+        src="{% static 'material/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js' %}"></script>
     <script src="{% static 'material/assets/plugins/d3/d3.min.js' %}"></script>
     <script src="{% static 'material/assets/plugins/c3-master/c3.min.js' %}"></script>
     <script src="js/dashboard1.js' %}"></script>
