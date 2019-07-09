@@ -114,6 +114,7 @@
                         <th>Email</th>
                         <th>Primeiro nome</th>
                         <th>ultimo nome</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -124,6 +125,9 @@
                         <td>{{user.email}}</td>
                         <td>{{user.first_name}}</td>
                         <td>{{user.last_name}}</td>
+                        <td>
+                            <a href="/home/list/delete/{{user.id}}">deletar</a>
+                        </td>
                     </tr>
                     {% endfor%}
 
