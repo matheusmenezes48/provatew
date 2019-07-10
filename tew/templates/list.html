@@ -125,40 +125,88 @@
                         <td>{{user.email}}</td>
                         <td>{{user.first_name}}</td>
                         <td>{{user.last_name}}</td>
-
                         <td>
-                            <a href="/home/list/delete/{{user.id}}">deletar</a>
-                            
+                            <a href="/home/list/delete/{{user.id}}">excluir</a>
                         </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-id="{{user.id}}" data-toggle="modal"
+                                data-target="#chamarmodal">Excluir</button>
+                        </td>
+
+
                     </tr>
                     {% endfor%}
 
 
                 </tbody>
             </table>
+            <div class="modal fade" id="chamarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+
+
+                <div class="modal-dialog" role="document">
+
+
+                    <div class="modal-content">
+
+
+                        <div class="modal-header">
+
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+
+                        </div>
+
+
+
+                        <div class="modal-body">
+                            <p id="user">Deseja realmente Excluir ?</p>
+                        </div>
+
+
+
+                        <div class="modal-footer">
+                            <form action="" id="confirm" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Sim</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                            </form>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <script>$('#chamarmodal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget)
+                    var a = button.data('id')
+                    var modal = $(this)
+                    modal.find('#confirm').attr('action', '/home/list/delete/' + a + '/')
+
+                })</script>
 
 
         </div>
 
-        <!-- ============================================================== -->
-        <!-- End Wrapper -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- All Jquery -->
-        <!-- ============================================================== -->
+
+
+
         <script src="{% static 'material/assets/plugins/jquery/jquery.min.js' %}"></script>
-        <!-- Bootstrap tether Core JavaScript -->
         <script src="{% static 'material/assets/plugins/bootstrap/js/tether.min.js' %}"></script>
         <script src="{% static 'material/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-        <!-- slimscrollbar scrollbar JavaScript -->
         <script src="{% static 'material/js/jquery.slimscroll.js' %}"></script>
-        <!--Wave Effects -->
         <script src="{% static 'material/js/waves.js' %}"></script>
-        <!--Menu sidebar -->
         <script src="{% static 'material/js/sidebarmenu.js' %}"></script>
-        <!--stickey kit -->
         <script src="{% static 'material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js' %}"></script>
-        <!--Custom JavaScript -->
         <script src="{% static 'material/js/custom.min.js' %}"></script>
 </body>
 
